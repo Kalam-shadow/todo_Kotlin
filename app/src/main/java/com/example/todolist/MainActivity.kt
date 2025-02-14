@@ -64,7 +64,7 @@ fun TodoApp(todoViewModel: TodoViewModel = viewModel(), modifier: Modifier) {
     Column(modifier = modifier.fillMaxSize()
         .padding(16.dp)) {
         LazyColumn {
-            items(todos) { todo ->
+            items(todos, key = {it.id}) { todo ->
                 TodoItem(
                     todo = todo,
                     onDelete = { todoViewModel.deleteTodo(todo) },
